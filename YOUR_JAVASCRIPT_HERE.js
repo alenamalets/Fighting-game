@@ -44,4 +44,18 @@ function displayStats(heroObj) {
     
 }
 
+function changeName(heroObj) {
+    const input = document.getElementById('name');  
+    const name = input.value;
+    heroObj.name = name;
+    input.value = null;
+    if (!name) {
+        alert('Name can not be empty!');
+    } 
+    this.displayStats(heroObj);
+}
+
+
 displayStats(hero);
+
+

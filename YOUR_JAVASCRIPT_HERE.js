@@ -1,7 +1,12 @@
 // Write your JS here
 
 const hero = {
-    name: 'Spider-man',
+    name: 'Samurai',
     heroic: true,
-    inventory: []
+    inventory: [],
+    health: 10,
+    weapon: {
+        type:'Sword',
+        damage: 2
+    }
 };

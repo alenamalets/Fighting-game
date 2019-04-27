@@ -15,17 +15,32 @@
     <img id="bag" onclick="equipWeapon(hero)" src="https://cdn.pixabay.com/photo/2018/03/22/18/12/chest-3251351__340.png" alt="bag">
   </div>
  
-  <div id="hero-info"></div>
+  <div id="hero-info">
+    <div id="hero-block"></div>
+    <form class="change-name" onsubmit="changeName(hero); return false">
+      <span class="formSection">
+        <label for="name"><b>New name:</b></label>
+        <input type="text" id="name">
+      </span>
+      <span class="button">
+        <button type="default">Change name</button>
+      </span>
+    </form>
+</div>
 
-  <form class="change-name" onsubmit="changeName(hero); return false">
-    <span class="formSection">
-      <label for="name"><b>New name:</b></label>
-      <input type="text" id="name">
-    </span>
-    <span class="button">
-      <button type="default">Change name</button>
-    </span>
-  </form>
+  <div id="enemy-info"></div>
+
+  <div class="fight">
+      <div class="hero-fight">
+        <img src="http://clipart-library.com/data_images/555011.png" alt="hero">
+      </div>
+      <div class="fight-button">
+        <button onclick="fight(enemy)" class="fight-button">FIGHT</button>
+      </div>
+      <div class="enemy-fight">
+        <img src="https://sitejerk.com/images/samurai-jack-transparent-3.png" alt="enemy">
+      </div>
+    </div>
 
 
 

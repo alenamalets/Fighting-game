@@ -5,8 +5,8 @@
 }
 
 .hero-images img {
-    width: 20em;
-    height: 20em;
+    width: 10em;
+    height: 10em;
     margin: 2em;
     border-radius: 2em;
     cursor: pointer;
@@ -24,11 +24,28 @@
 #bag {
     border: solid 5px #816E94;
 }
-#hero-info {
-    margin-left: 43%;
+#hero-info, #enemy-info {
+    margin-left: 15%;
     font-size: 1.5em;
 }
-.change-name {
-    text-align: center;
-    font-size: 1.5em;
+#hero-info {
+    float: left;
+}
+#enemy-info {
+    min-height: 8em;
+    padding-left: 50%;
+}
+
+.fight {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.fight img {
+    width: 30em;
+    height: 30em;
+}
+.fight-button {
+    padding: 15px 40px;
+    cursor: pointer;
 }

@@ -1,0 +1,26 @@
+.hero-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-images img {
+    width: 20em;
+    height: 20em;
+    margin: 2em;
+    border-radius: 2em;
+    cursor: pointer;
+    background-color:#E0DED9;
+}
+
+#inn {
+    border: solid 5px #948B89;
+}
+
+#dagger {
+    border: solid 5px #D199B6;
+}
+
+#bag {
+    border: solid 5px #816E94;
+}

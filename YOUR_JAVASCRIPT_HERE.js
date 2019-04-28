@@ -28,6 +28,7 @@ function rest(heroObj) {
     }
     else {
         heroObj.health = 10
+        displayStats(hero);
     }
     return heroObj;
 }

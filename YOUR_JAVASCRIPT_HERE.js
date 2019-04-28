@@ -114,10 +114,10 @@ function fourArr() {
         const p = document.createElement('p');
         fightResult.appendChild(p);
         if (myKicks[i] === enemyBlocks[i]) {
-            p.innerHTML = `<span style="color: red;">&#x2192; </span>`;
+            p.innerHTML = `<span style="color: red;">Kick ${returnBodyPart(myKicks[i])} &#x2192; Block ${returnBodyPart(enemyBlocks[i])}</span>`;
         }
         else { 
-            p.innerHTML = `<span style="color: green;">&#x2192; </span>`;
+            p.innerHTML = `<span style="color: green;">Kick ${returnBodyPart(myKicks[i])} &#x2192; Block ${returnBodyPart(enemyBlocks[i])}</span>`;
             enemy.health -=2;
             if ( enemy.health < 0) {
                 enemy.health = 0;
@@ -129,10 +129,10 @@ function fourArr() {
         const p = document.createElement('p');
         fightResult.appendChild(p);
         if (enemyKicks[i] === myBlocks[i]) {
-            p.innerHTML = `<span style="color: red;">&#x2190;</span>`;
+            p.innerHTML = `<span style="color: red;">Block ${returnBodyPart(myBlocks[i])} &#x2190; Kick ${returnBodyPart(enemyKicks[i])}</span>`;
         }
         else { 
-            p.innerHTML = `<span style="color: green;">&#x2190;</span>`;
+            p.innerHTML = `<span style="color: green;">Block ${returnBodyPart(myBlocks[i])} &#x2190; Kick ${returnBodyPart(enemyKicks[i])}</span>`;
             hero.health -=2;
             if ( hero.health < 0) {
                 hero.health = 0;
@@ -166,7 +166,21 @@ function fourArr() {
     
 }
 
-
+function returnBodyPart(i) {
+    switch (i) {
+        case 0:
+            return 'head';
+            break;
+        case 1:
+            return 'body';
+            break;
+        case 2:
+            return 'legs';
+            break;
+        default:
+            break;
+    }
+}
 
 displayStats(hero);
 displayStatsEnemy(enemy);

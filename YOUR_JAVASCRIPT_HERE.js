@@ -67,7 +67,7 @@ function displayStatsEnemy(heroObj) {
 function changeName(heroObj) {
     const input = document.getElementById('name');  
     const name = input.value;
-    heroObj.name = name;
+    
     input.value = null;
     if (!name) {
         alert('Name can not be empty!');
@@ -77,6 +77,7 @@ function changeName(heroObj) {
         alert('Name is too long!');
         return null;
     } 
+    heroObj.name = name;
     this.displayStats(heroObj);
 }
 

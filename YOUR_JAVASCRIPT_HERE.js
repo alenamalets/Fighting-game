@@ -71,15 +71,104 @@ function changeName(heroObj) {
     input.value = null;
     if (!name) {
         alert('Name can not be empty!');
+        return null;
+    } 
+    if (name.length >25) {
+        alert('Name is too long!');
+        return null;
     } 
     this.displayStats(heroObj);
 }
 
-function fight(heroObj) {
-    heroObj.health -= 2;
-    this.displayStatsEnemy(heroObj);
+// function fight(heroObj) {
+//     heroObj.health -= 2;
+//     if(heroObj.health < 0) {
+//         alert("Enemy is dead!");
+//         return null;
+//     }
+//     this.displayStatsEnemy(heroObj);
+    
+// }
+
+function randomNumber() {
+    const arr = [];
+    for (let i = 0; i < 2; i++) {
+        const random = Math.floor(Math.random()*3);
+        arr.push(random);
+    }
+    return arr;   
 }
+
+function fourArr() {
+    if (hero.health === 0 || enemy.health === 0) {
+        return null;
+    }
+    const myKicks = randomNumber();
+    const enemyBlocks = randomNumber();
+    const enemyKicks = randomNumber();
+    const myBlocks = randomNumber();
+    const fightResult = document.getElementById('fight-result');
+    fightResult.innerHTML = ''; 
+    for (let i = 0; i < myKicks.length; i++) {
+        const p = document.createElement('p');
+        fightResult.appendChild(p);
+        if (myKicks[i] === enemyBlocks[i]) {
+            p.innerHTML = `<span style="color: red;">&#x2192; </span>`;
+        }
+        else { 
+            p.innerHTML = `<span style="color: green;">&#x2192; </span>`;
+            enemy.health -=2;
+            if ( enemy.health < 0) {
+                enemy.health = 0;
+            }
+           
+        }
+    }   
+    for (let i = 0; i < enemyKicks.length; i++) {
+        const p = document.createElement('p');
+        fightResult.appendChild(p);
+        if (enemyKicks[i] === myBlocks[i]) {
+            p.innerHTML = `<span style="color: red;">&#x2190;</span>`;
+        }
+        else { 
+            p.innerHTML = `<span style="color: green;">&#x2190;</span>`;
+            hero.health -=2;
+            if ( hero.health < 0) {
+                hero.health = 0;
+            }
+            
+
+        }
+    } 
+    const heroFight = document.getElementById('hero-fight');
+    const enemyFight = document.getElementById('enemy-fight');
+    displayStatsEnemy(enemy);
+    displayStats(hero);
+
+    if (hero.health === 0 && enemy.health === 0) {
+        heroFight.setAttribute("style", "background-color: #E0665E;");
+        enemyFight.setAttribute("style", "background-color: #E0665E;");
+        // alert('Draw');
+        return null;
+       
+    }
+    else if (hero.health === 0) {
+        heroFight.setAttribute("style", "background-color: #E0665E;");
+        // alert('Enemy win');
+        return null;
+    }
+    else if (enemy.health === 0) {
+        enemyFight.setAttribute("style", "background-color: #E0665E;");
+        // alert('You win');
+        return null;
+    }
+    
+}
+
+
 
 displayStats(hero);
 displayStatsEnemy(enemy);
+
+
 
